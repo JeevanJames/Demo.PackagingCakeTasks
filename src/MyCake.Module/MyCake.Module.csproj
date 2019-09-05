@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="COPY $(TargetPath) D:\Code\Temp\MyCake.Demo\tools\Modules\$(TargetFileName) /Y" />
+    <Exec Command="COPY /Y $(TargetPath) $(SolutionDir)..\consumer\tools\Modules\$(TargetFileName)" />
   </Target>
 
 </Project>
