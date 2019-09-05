@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Cake.MyCake.Module</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Common" Version="0.34.1" />
+    <PackageReference Include="Cake.Core" Version="0.34.1" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="COPY $(TargetPath) D:\Code\Temp\MyCake.Demo\tools\Modules\$(TargetFileName) /Y" />
+  </Target>
+
+</Project>
